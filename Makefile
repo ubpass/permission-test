@@ -1,4 +1,4 @@
 build:
 	echo "Building..."
-	sleep 2
+	sleep 1
 	echo "Build"
