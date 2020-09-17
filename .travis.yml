@@ -1,0 +1,22 @@
+before_script:
+  - if [ "${TRAVIS_PULL_REQUEST}" = true ]; then unset MY_SUPER_SECRET; fi
+
+jobs:
+  include:
+    - stage: build
+      script:
+      - make build
+
+deploy:
+  - provider: script
+    env: VERSION=latest
+    script: make deploy
+    on:
+      branch: master
+  - provider: script
+    env: VERSION=$TRAVIS_TAG
+    script: make deploy
+    on:
+      tags: true
+
+
