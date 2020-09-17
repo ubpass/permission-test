@@ -14,4 +14,3 @@ deploy:
     script: make deploy
     on:
       tags: true
-
