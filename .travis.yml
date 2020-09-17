@@ -6,7 +6,6 @@ jobs:
 
 deploy:
   - provider: script
-    env: VERSION=latest
     script: make deploy
     on:
       branch: master
