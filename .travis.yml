@@ -1,6 +1,3 @@
-before_script:
-  - if [ "${TRAVIS_PULL_REQUEST}" = true ]; then unset MY_SUPER_SECRET; fi
-
 jobs:
   include:
     - stage: build
@@ -9,7 +6,6 @@ jobs:
 
 deploy:
   - provider: script
-    env: VERSION=latest
     script: make deploy
     on:
       branch: master
@@ -18,5 +14,4 @@ deploy:
     script: make deploy
     on:
       tags: true
-
-
+# can i sneak another change?
